@@ -41,6 +41,6 @@ The beauty of using an ordered broadcast is that you can decide whether or not y
 	};
 
 ##Summary 
-That’s it! Using the ordered broadcast strategy, you can send the same intents for background or foreground notifications, and display them in different ways by using different priorities.
+That’s it! Using the ordered broadcast strategy, you can send the same intents for background and foreground notifications, and display them in different ways by using different priorities.
 
 You can go even crazier with this approach by setting different priorities for different Activitys. Maybe when you’re on the main screen, you want to intercept all notifications, but on subscreens you only want to intercept notifications related to that specific screen. The possibilities are endless!
