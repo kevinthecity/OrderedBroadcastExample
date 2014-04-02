@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">OrderedBroadcast Demo</string>
+	<string name="stop_broadcasts">Stop broadcasts</string>
+	<string name="start_broadcasts">Start broadcasts</string>
+	<string name="text_title">Ordered Broadcast Demo</string>
+	<string name="text_description">An ordered broadcast is similar to a normal broadcast, except it delivers to
+		receivers with a higher priority first. Those receivers, if they choose, can abort the broadcast to prevent
+		lower priority receivers from catching them.
+
+		\n\nThis app demonstrate this functionality by showing a toast if the application is in the foreground, and
+		showing a status bar notification if it is in the background. Go ahead, try it out! Press \"Start
+		broadcasts\" to get started!
+	</string>
+
+	<string name="notifications_started">Notifications started!</string>
+	<string name="notifications_cancelled">Notifications cancelled</string>
+
+	<string name="received_in_background">Received in background</string>
+	<string name="received_in_foreground">Received in foreground</string>
+
+	<string name="notification_title">Update</string>
+
+</resources>
