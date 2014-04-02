@@ -12,7 +12,7 @@ It’s true, there is no intrinsic differentiation for foreground and background
 [See the demo video](https://www.youtube.com/watch?v=lLPZy8MxJvs) (YouTube)
 
 ##OrderedBroadcasts 
-One strategy for mitigating this problem is using a not-so-well-known API titled [sendOrderedBroadcast](http://developer.android.com/reference/android/content/Context.html#sendOrderedBroadcast%28android.content.Intent,%20java.lang.String%29) available on any [Context](http://developer.android.com/reference/android/content/Context.html) within your application. An ordered broadcast takes the same intent you would use with a normal broadcast, the primary difference lies within the receiver. By setting a priority on the IntentFilter using `setPriority(int priority)` you tell the system that this receiver should be called before any other. Lets take a look at some code.
+One strategy for mitigating this problem is using a not-so-well-known API titled [sendOrderedBroadcast](http://developer.android.com/reference/android/content/Context.html#sendOrderedBroadcast%28android.content.Intent,%20java.lang.String%29) (used in place of [sendBroadcast](http://developer.android.com/reference/android/content/Context.html#sendBroadcast(android.content.Intent))) available on any [Context](http://developer.android.com/reference/android/content/Context.html) within your application. An ordered broadcast takes the same intent you would use with a normal broadcast, the primary difference lies within the receiver. By setting a priority on the IntentFilter using `setPriority(int priority)` you tell the system that this receiver should be called before any other. Lets take a look at some code.
 
 	@Override
 	protected void onResume() {
