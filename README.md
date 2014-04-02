@@ -3,7 +3,7 @@ OrderedBroadcastExample: Simulating background / foreground notifications in And
 
 In a recent [article](http://www.objc.io/issue-11/android-notifications.html) I wrote for objc.io detailing how notifications in Android differ from those in iOS, a reader messaged me and asked 
 
->“How do I detect if an Application is in the foreground when a notification arrives? Android seems to be missing this functionality, where iOS has it readily available.”
+>“How do I detect if an Application is in the foreground when a notification arrives? Android seems to be missing this functionality, where iOS has it readily available.” [paraphrased](https://twitter.com/GiovaMaster/status/451090345582133249)
 
 It’s true, there is no intrinsic differentiation for foreground and background notifications in Android. This is largely in fundamental difference in how Android handles notifications altogether. In Android, the developer has full control over the lifecycle and presentation of a notification, and such, it could be presented at any time. Whether the app is actively running or not, the developer is in charge of presenting notifications to the user. The same callbacks are presented in all scenarios. In light of this question, I created a sample project to demonstrate one such approach to this problem.
 
