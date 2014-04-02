@@ -9,7 +9,7 @@ It’s true, there is no intrinsic differentiation for foreground and background
 
 [OrderedBroadcast Example](https://github.com/kevinthecity/OrderedBroadcastExample "OrderedBroadcast Example") (Github)
 
-OrderedBroadcasts One strategy for mitigating this problem is using a not-so-well-known API title “[sendOrderedBroadcast](http://developer.android.com/reference/android/content/Context.html#sendOrderedBroadcast%28android.content.Intent,%20java.lang.String%29)” available on any [Context](http://developer.android.com/reference/android/content/Context.html) within your application. An ordered broadcast takes the same intent you would use with a normal broadcast, the difference lies in the receiver. Lets take a look at some code.
+OrderedBroadcasts One strategy for mitigating this problem is using a not-so-well-known API title [sendOrderedBroadcast](http://developer.android.com/reference/android/content/Context.html#sendOrderedBroadcast%28android.content.Intent,%20java.lang.String%29) available on any [Context](http://developer.android.com/reference/android/content/Context.html) within your application. An ordered broadcast takes the same intent you would use with a normal broadcast, the difference lies in the receiver. Lets take a look at some code.
 
 	@Override
 	protected void onResume() {
