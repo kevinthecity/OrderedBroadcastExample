@@ -9,7 +9,8 @@ It’s true, there is no intrinsic differentiation for foreground and background
 
 [OrderedBroadcast Example](https://github.com/kevinthecity/OrderedBroadcastExample "OrderedBroadcast Example") (Github)
 
-OrderedBroadcasts One strategy for mitigating this problem is using a not-so-well-known API title [sendOrderedBroadcast](http://developer.android.com/reference/android/content/Context.html#sendOrderedBroadcast%28android.content.Intent,%20java.lang.String%29) available on any [Context](http://developer.android.com/reference/android/content/Context.html) within your application. An ordered broadcast takes the same intent you would use with a normal broadcast, the difference lies in the receiver. Lets take a look at some code.
+##OrderedBroadcasts 
+One strategy for mitigating this problem is using a not-so-well-known API title [sendOrderedBroadcast](http://developer.android.com/reference/android/content/Context.html#sendOrderedBroadcast%28android.content.Intent,%20java.lang.String%29) available on any [Context](http://developer.android.com/reference/android/content/Context.html) within your application. An ordered broadcast takes the same intent you would use with a normal broadcast, the difference lies in the receiver. Lets take a look at some code.
 
 	@Override
 	protected void onResume() {
@@ -39,6 +40,7 @@ The beauty of using an ordered broadcast is that you can decide whether or not y
 	 }
 	};
 
-Summary That’s it! Using the ordered broadcast strategy, you can send the same intents for background or foreground notifications, and display them in different ways by using different priorities.
+##Summary 
+That’s it! Using the ordered broadcast strategy, you can send the same intents for background or foreground notifications, and display them in different ways by using different priorities.
 
 You can go even crazier with this approach by setting different priorities for different Activitys. Maybe when you’re on the main screen, you want to intercept all notifications, but on subscreens you only want to intercept notifications related to that specific screen. The possibilities are endless!
