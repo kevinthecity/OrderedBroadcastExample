@@ -7,7 +7,7 @@ In a recent article I wrote for objc.io detailing how notifications in Android d
 
 It’s true, there is no intrinsic differentiation for foreground and background notifications in Android. This is largely in fundamental difference in how Android handles notifications altogether. In Android, the developer has full control over the lifecycle and presentation of a notification, and such, it could be presented at any time. Whether the app is actively running or not, the developer is in charge of presenting notifications to the user. The same callbacks are presented in all scenarios. In light of this question, I created a sample project to demonstrate one such approach to this problem.
 
-OrderedBroadcast Example (Github)
+[OrderedBroadcast Example](https://github.com/kevinthecity/OrderedBroadcastExample "OrderedBroadcast Example") (Github)
 
 OrderedBroadcasts One strategy for mitigating this problem is using a not-so-well-known API title “sendOrderedBroadcast” available on any Context within your application. An ordered broadcast takes the same intent you would use with a normal broadcast, the difference lies in the receiver. Lets take a look at some code.
 
