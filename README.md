@@ -18,7 +18,7 @@ One strategy for mitigating this problem is using a not-so-well-known API title 
 	 IntentFilter filter = new IntentFilter(AlarmReceiver.ACTION_RECEIVE_NOTIFICATION);
 	 // The default priority is 0. Positive values will be before
 	 // the default, lower values will be after it.
-	 filter.setPriority(1);
+	 **filter.setPriority(1);**
 
 	 // It’s good practice to register your BroadcastReceiver’s in
 	 // onResume() unless you have a good reason not to
@@ -33,7 +33,7 @@ The beauty of using an ordered broadcast is that you can decide whether or not y
 	 @Override
 	 public void onReceive(Context context, Intent intent) {
 	 // Don’t send this intent to anyone else!
-	 abortBroadcast();
+	 **abortBroadcast();**
 
 	 // Let the user know we received a broadcast (if we want).
 	 Toast.makeText(MainActivity.this, R.string.received_in_foreground, Toast.LENGTH_SHORT).show();
