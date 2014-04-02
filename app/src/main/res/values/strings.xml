@@ -9,7 +9,7 @@
 		receivers with a higher priority first. Those receivers, if they choose, can abort the broadcast to prevent
 		lower priority receivers from catching them.
 
-		\n\nThis app demonstrate this functionality by showing a toast if the application is in the foreground, and
+		\n\nThis app demonstrates this functionality by showing a toast if the application is in the foreground, and
 		showing a status bar notification if it is in the background. Go ahead, try it out! Press \"Start
 		broadcasts\" to get started!
 	</string>
