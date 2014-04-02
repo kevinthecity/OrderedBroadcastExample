@@ -12,7 +12,7 @@ It’s true, there is no intrinsic differentiation for foreground and background
 [See the demo video](https://www.youtube.com/watch?v=lLPZy8MxJvs) (YouTube)
 
 ##OrderedBroadcasts 
-One strategy for mitigating this problem is using a not-so-well-known API title [sendOrderedBroadcast](http://developer.android.com/reference/android/content/Context.html#sendOrderedBroadcast%28android.content.Intent,%20java.lang.String%29) available on any [Context](http://developer.android.com/reference/android/content/Context.html) within your application. An ordered broadcast takes the same intent you would use with a normal broadcast, the difference lies in the receiver. By setting a priority on the IntentFilter using `setPriority(int priority)` you can make sure that the receiver is called before any other. Lets take a look at some code.
+One strategy for mitigating this problem is using a not-so-well-known API titled [sendOrderedBroadcast](http://developer.android.com/reference/android/content/Context.html#sendOrderedBroadcast%28android.content.Intent,%20java.lang.String%29) available on any [Context](http://developer.android.com/reference/android/content/Context.html) within your application. An ordered broadcast takes the same intent you would use with a normal broadcast, the primary difference lies within the receiver. By setting a priority on the IntentFilter using `setPriority(int priority)` you tell the system that this receiver should be called before any other. Lets take a look at some code.
 
 	@Override
 	protected void onResume() {
@@ -29,7 +29,7 @@ One strategy for mitigating this problem is using a not-so-well-known API title 
 
 When registering a receiver programmatically, we have the ability to set a priority on it. You might have seen this before, but never known why to use it. Well, now you know! Ordered broadcasts will inspect this priority before sending to the receivers. Receivers with a higher priority will catch the broadcast first, and then send itself on to lower ones (default is 0).
 
-The beauty of using an ordered broadcast is that you can decide whether or not your want that broadcast propagated. For example, if you have two BroadcastReceivers catching the broadcast, one as a foreground receiver and one as a background receiver, you can tell the foreground receiver to abort the broadcast using `abortBroadcast()`, so that any lower priority receivers won’t catch it.
+The beauty of using an ordered broadcast is that you (the developer) can decide whether or not your want that broadcast propagated. For example, if you have two BroadcastReceivers catching q broadcast, one as a foreground receiver and one as a background receiver, you can tell the foreground receiver to abort the broadcast using `abortBroadcast()`, so that any lower priority receivers won’t catch it.
 
 	private BroadcastReceiver mForegroundReceiver = new BroadcastReceiver() {
 	 @Override
@@ -43,6 +43,6 @@ The beauty of using an ordered broadcast is that you can decide whether or not y
 	};
 
 ##Summary 
-That’s it! Using the ordered broadcast strategy, you can send the same intents for background and foreground notifications, and display them in different ways by using different priorities.
+That’s it! Using the ordered broadcast strategy, you can send the same intents for background and foreground notifications, and display them in different ways by utilizing different priorities.
 
 You can go even crazier with this approach by setting different priorities for different Activitys. Maybe when you’re on the main screen, you want to intercept all notifications, but on subscreens you only want to intercept notifications related to that specific screen. The possibilities are endless!
